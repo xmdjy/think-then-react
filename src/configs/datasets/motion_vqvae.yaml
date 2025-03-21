@@ -1,0 +1,13 @@
+dataset:
+  target: src.datasets.motion_vqvae_dataset.MotionVQVAEDataset
+
+  # kwargs:
+  dataset_dir: ~/data/data/motion/interx
+  epoch_scaling: 10  # scaling up the length of dataset for each epoch, reduce val interval
+  max_motion_length: 256
+  min_motion_length: 64  # this is very important for VQVAE training (empirically)!
+  motion_representation: intergen_262
+  split: 
+  tiny_dataset: False
+  use_h3d: False
+  abs_action: False

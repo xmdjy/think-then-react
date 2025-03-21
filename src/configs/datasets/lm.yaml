@@ -1,0 +1,22 @@
+dataset:
+  target: src.datasets.lm_dataset.LMDataset
+
+  # kwargs:
+  dataset_dir: ~/data/data/motion/interx
+  epoch_scaling: 1
+  max_motion_length: 256
+  min_motion_length: 32
+  motion_representation: intergen_262
+  split: 
+  tiny_dataset: False
+  vqvae_ckpt_path: /path/to/ckpt
+  n_x_bins: 10
+  n_z_bins: 10
+  n_r_bins: 10
+  stage: pretrain
+  use_h3d: True
+
+  motion_token_template: <motion_{}>
+  x_template: <pos_x_{}>
+  z_template: <pos_z_{}>
+  r_template: <rot_r_{}>

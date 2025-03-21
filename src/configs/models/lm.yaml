@@ -1,0 +1,36 @@
+seed: 42
+
+model:
+  target: src.models.lm.LMReactiveMotionGenerator
+  model_kwargs:
+    lm: google/flan-t5-base  # google/flan-t5-large
+    vqvae_ckpt_path: /path/to/ckpt
+
+    evaluator_ckpt_path: /path/to/ckpt
+    n_x_bins: 20
+    n_z_bins: 20
+    n_r_bins: 20
+    mask_ratio: 0.15
+    use_h3d: True  # set this to False works as well
+    stage: pretrain
+    pretrained_path:
+    unit_size: 1
+    rethinking_interval: 4
+    use_adaptive_sampling: True
+
+  training_kwargs:
+    optimizer:
+      target: torch.optim.Adam
+      lr: 1e-4
+    scheduler: constant_schedule_with_warmup
+    warmup_steps: 1000
+
+trainer:
+  max_epochs: 200
+
+dataloader:
+  batch_size: 32
+  val_batch_size: 32
+  num_workers: 32
+  pin_memory: True
+  persistent_workers: True

@@ -1,0 +1,541 @@
+{
+    "pretrain": {
+        "interaction-to-caption": {
+            "src": [
+                "Describe an action-reaction human motion: action person's initial [position-x position-z orientation] triplet is <action_initial_xzr>, and he is performing <action_motion>; reaction person's initial [position-x position-z orientation] triplet is <reaction_initial_xzr>, and he is performing <reaction_motion>",
+                "Illustrate an action-reaction human motion: action person's initial [position-x position-z orientation] triplet is <action_initial_xzr>, and his action is <action_motion>; the reaction person's initial [position-x position-z orientation] triplet is <reaction_initial_xzr>, and he responds by <reaction_motion>",
+                "Describe an action-reaction human motion: initially, the action person's [position-x position-z orientation] triplet is <action_initial_xzr>, and he starts <action_motion>; the reaction person, with an initial [position-x position-z orientation] triplet of <reaction_initial_xzr>, then performs <reaction_motion>",
+                "Describe an action-reaction human motion: given that the action person's initial [position-x position-z orientation] triplet is <action_initial_xzr>, he proceeds to <action_motion>; the reaction person, starting at <reaction_initial_xzr>, reacts by <reaction_motion>",
+                "Describe an action-reaction human motion: the action person starts at [position-x position-z orientation] of <action_initial_xzr> and begins <action_motion>; the reaction person, initially at <reaction_initial_xzr>, follows up with <reaction_motion>",
+                "Explain an action-reaction human motion: with an initial [position-x position-z orientation] of <action_initial_xzr>, the action person does <action_motion>; the reaction person, beginning at <reaction_initial_xzr>, counters with <reaction_motion>",
+                "Describe an action-reaction human motion: the action person, with a starting position of <action_initial_xzr>, initiates <action_motion>; the reaction person, at <reaction_initial_xzr>, subsequently does <reaction_motion>",
+                "Describe an action-reaction human motion: starting from <action_initial_xzr>, the action person performs <action_motion>; meanwhile, the reaction person, located at <reaction_initial_xzr>, reacts with <reaction_motion>",
+                "Detail an action-reaction human motion: the initial position of the action person is <action_initial_xzr>, and he does <action_motion>; the reaction person, beginning at <reaction_initial_xzr>, responds with <reaction_motion>",
+                "Describe an action-reaction human motion: from an initial position of <action_initial_xzr>, the action person moves to <action_motion>; the reaction person, with an initial position of <reaction_initial_xzr>, proceeds to <reaction_motion>",
+                "Describe an action-reaction human motion: the action person, starting at <action_initial_xzr>, executes <action_motion>; the reaction person, whose initial coordinates are <reaction_initial_xzr>, performs <reaction_motion> in response",
+                "Describe an action-reaction human motion: at the coordinates <action_initial_xzr>, the action person performs <action_motion>; the reaction person, positioned at <reaction_initial_xzr>, reacts with <reaction_motion>",
+                "Outline an action-reaction human motion: the action person stands at <action_initial_xzr> and executes <action_motion>; the reaction person, initially at <reaction_initial_xzr>, performs <reaction_motion>",
+                "Describe an action-reaction human motion: beginning from <action_initial_xzr>, the action person initiates <action_motion>; the reaction person, at the initial position <reaction_initial_xzr>, follows with <reaction_motion>",
+                "Describe an action-reaction human motion: with starting coordinates <action_initial_xzr>, the action person makes a move of <action_motion>; the reaction person, beginning at <reaction_initial_xzr>, counters with <reaction_motion>",
+                "Describe an action-reaction human motion: the action person's initial coordinates are <action_initial_xzr>, where he performs <action_motion>; the reaction person, positioned at <reaction_initial_xzr>, reacts by doing <reaction_motion>",
+                "Narrate an action-reaction human motion: the action person, at <action_initial_xzr>, starts <action_motion>; the reaction person, initially located at <reaction_initial_xzr>, responds with <reaction_motion>",
+                "Describe an action-reaction human motion: from the coordinates of <action_initial_xzr>, the action person does <action_motion>; at the same time, the reaction person, starting at <reaction_initial_xzr>, performs <reaction_motion>",
+                "Depict an action-reaction human motion: the action person, standing at <action_initial_xzr>, begins to <action_motion>; the reaction person, whose initial coordinates are <reaction_initial_xzr>, reacts by <reaction_motion>",
+                "Describe an action-reaction human motion: the initial position of the action person is <action_initial_xzr>, and he begins <action_motion>; the reaction person, starting at <reaction_initial_xzr>, performs <reaction_motion>",
+                "Describe an action-reaction human motion: beginning at <action_initial_xzr>, the action person performs <action_motion>; the reaction person, whose starting position is <reaction_initial_xzr>, reacts by doing <reaction_motion>"
+            ],
+            "tgt": "<caption>",
+            "src_placeholders": [
+                "action_initial_xzr",
+                "action_motion",
+                "reaction_initial_xzr",
+                "reaction_motion"
+            ],
+            "tgt_placeholders": [
+                "caption"
+            ]
+        },
+        "caption-to-interaction": {
+            "src": [
+                "Generate a series of human interaction movements based on the provided caption '<caption>'. The initial position and orientation of the action person is <action_initial_xzr> while the reaction person is at <reaction_initial_xzr>",
+                "Create a sequence of human actions and reactions as per the given caption '<caption>'. The starting point and direction of the action person is <action_initial_xzr> and the reaction person is <reaction_initial_xzr>",
+                "Use the caption '<caption>' and create a corresponding human interaction motion. Starting [position-x position-z orientation] for the action person is <action_initial_xzr> and for the reaction person is <reaction_initial_xzr>",
+                "Design a human motion interaction that aligns with the description '<caption>'. The initial coordinates and orientation for the action person are <action_initial_xzr> and for the reaction person are <reaction_initial_xzr>",
+                "Develop a human interaction motion following the caption '<caption>'. The initial parameters for action person are <action_initial_xzr> and for reaction person are <reaction_initial_xzr>",
+                "Construct an action-reaction human motion sequence based on the caption '<caption>'. Initial position and orientation for the action person is <action_initial_xzr>, and for the reaction person is <reaction_initial_xzr>",
+                "Formulate a sequence of human interaction movements based on the description '<caption>'. The initial [position-x position-z orientation] for the action person is <action_initial_xzr> and for the reaction person is <reaction_initial_xzr>",
+                "Transform the caption '<caption>' into a human interaction motion. Starting point and direction for the action person are <action_initial_xzr> and for the reaction person are <reaction_initial_xzr>",
+                "Translate the given caption '<caption>' into a human motion interaction. The initial parameters for the action person are <action_initial_xzr> and for the reaction person are <reaction_initial_xzr>",
+                "Craft a human action-reaction sequence based on the provided caption '<caption>'. The action individual starts at <action_initial_xzr> and the reaction individual at <reaction_initial_xzr>",
+                "Render a human interaction motion that corresponds with the caption '<caption>'. The action person has starting parameters <action_initial_xzr> and the reaction person has starting parameters <reaction_initial_xzr>",
+                "Compose a human interaction sequence as per the caption '<caption>'. The action person begins at <action_initial_xzr> and the reaction person begins at <reaction_initial_xzr>",
+                "Create a human interaction sequence following the description '<caption>'. The initial [position-x position-z orientation] for action individual is <action_initial_xzr>, reaction individual is <reaction_initial_xzr>",
+                "Devise a human interaction motion based on the caption '<caption>'. The action person's starting position and orientation is <action_initial_xzr> and the reaction person's is <reaction_initial_xzr>",
+                "Model an interactive human motion sequence as per the caption '<caption>'. The action person's initial coordinates and orientation are <action_initial_xzr>, and the reaction person's are <reaction_initial_xzr>",
+                "Shape a human interaction motion as per the caption '<caption>'. The action person starts at <action_initial_xzr> and the reaction person at <reaction_initial_xzr>",
+                "Generate a human motion interaction from the description '<caption>'. The starting parameters for the action person are <action_initial_xzr> and for the reaction person are <reaction_initial_xzr>",
+                "Transcribe the caption '<caption>' into a human interaction motion. The action person's initial position and orientation are <action_initial_xzr> and the reaction person's are <reaction_initial_xzr>",
+                "Produce a human interaction sequence based on the caption '<caption>'. The initial parameters for the action person are <action_initial_xzr>, and for the reaction person are <reaction_initial_xzr>",
+                "Articulate a human interaction motion per the caption '<caption>'. The action person's initial [position-x position-z orientation] is <action_initial_xzr>; the reaction person's is <reaction_initial_xzr>"
+            ],
+            "tgt": "Action: <action_motion>. Reaction: <reaction_motion>",
+            "src_placeholders": [
+                "action_initial_xzr",
+                "reaction_initial_xzr",
+                "caption"
+            ],
+            "tgt_placeholders": [
+                "action_motion",
+                "reaction_motion"
+            ]
+        },
+        "xzr-to-motion": {
+            "src": [
+                "Complete human motion sequence according to his initial motion <human_initial_motion> and his [x-position y-position orientation] triplet sequence: <human_xzr>",
+                "Generate the full human motion sequence based on the initial motion <human_initial_motion> and the triplet sequence of [x-position y-position orientation]: <human_xzr>",
+                "Derive the human motion sequence from the initial state <human_initial_motion> and the provided sequence of [x-position y-position orientation] triplets: <human_xzr>",
+                "Formulate the complete human motion sequence using the initial motion <human_initial_motion> and the [x-position y-position orientation] triplet data: <human_xzr>",
+                "Construct the entire human motion sequence starting with <human_initial_motion> and following the sequence of [x-position y-position orientation] triplets: <human_xzr>",
+                "Develop a complete human motion sequence based on his initial motion <human_initial_motion> and the sequence of [x-position y-position orientation] triplets: <human_xzr>",
+                "Create the motion sequence for a human based on initial motion <human_initial_motion> and the subsequent [x-position y-position orientation] triplet series: <human_xzr>",
+                "Craft the entire human motion series from the initial motion <human_initial_motion> and the triplet sequence of [x-position y-position orientation]: <human_xzr>",
+                "Build a comprehensive human motion sequence starting from <human_initial_motion> and using the [x-position y-position orientation] triplet sequence: <human_xzr>",
+                "Generate a full human motion trajectory based on initial motion <human_initial_motion> and the successive [x-position y-position orientation] triplets: <human_xzr>",
+                "Produce the full sequence of human motion from the initial <human_initial_motion> and the sequence of [x-position y-position orientation] triplets: <human_xzr>",
+                "Create the complete motion path for the human starting from <human_initial_motion>, based on the [x-position y-position orientation] triplet sequence: <human_xzr>",
+                "Derive the entire sequence of human motion starting with <human_initial_motion> and the provided [x-position y-position orientation] triplets: <human_xzr>",
+                "Generate a complete sequence of human motion from the initial state <human_initial_motion> and the series of [x-position y-position orientation] triplets: <human_xzr>",
+                "Formulate a complete trajectory for human motion using the initial motion <human_initial_motion> and the sequence of [x-position y-position orientation] triplets: <human_xzr>",
+                "Construct the full sequence of human motion starting from <human_initial_motion> and the triplet series [x-position y-position orientation]: <human_xzr>",
+                "Create the entire motion sequence for a human based on the initial motion <human_initial_motion> and the sequence of [x-position y-position orientation] triplets: <human_xzr>",
+                "Develop the full human motion trajectory from the initial motion <human_initial_motion> and the [x-position y-position orientation] triplet sequence: <human_xzr>",
+                "Produce a complete series of human motion starting from <human_initial_motion> and following the sequence of [x-position y-position orientation] triplets: <human_xzr>",
+                "Build the comprehensive human motion path from the initial condition <human_initial_motion> and the sequence of [x-position y-position orientation] triplets: <human_xzr>",
+                "Craft the complete trajectory for human motion beginning with <human_initial_motion> and the subsequent [x-position y-position orientation] triplets: <human_xzr>"
+            ],
+            "tgt": "<human_motion>",
+            "src_placeholders": [
+                "human_initial_motion",
+                "human_xzr"
+            ],
+            "tgt_placeholders": [
+                "human_motion"
+            ]
+        },
+        "motion-to-xzr": {
+            "src": [
+                "Complete human [x-position y-position orientation] sequence according to his motion sequence <human_motion> and his initial [x-position y-position orientation] triplet <human_initial_xzr>",
+                "Generate the full [x-position y-position orientation] sequence based on the motion sequence <human_motion> and the initial triplet <human_initial_xzr>",
+                "Derive the sequence of [x-position y-position orientation] from the motion sequence <human_motion> and the initial triplet <human_initial_xzr>",
+                "Formulate the complete [x-position y-position orientation] sequence using the motion sequence <human_motion> and initial triplet <human_initial_xzr>",
+                "Construct the entire [x-position y-position orientation] sequence starting with motion sequence <human_motion> and initial triplet <human_initial_xzr>",
+                "Develop a complete [x-position y-position orientation] sequence based on the motion sequence <human_motion> and the initial triplet <human_initial_xzr>",
+                "Create the sequence of [x-position y-position orientation] for a human based on the motion sequence <human_motion> and initial triplet <human_initial_xzr>",
+                "Craft the entire [x-position y-position orientation] series from the motion sequence <human_motion> and initial triplet <human_initial_xzr>",
+                "Build a comprehensive [x-position y-position orientation] sequence starting from motion sequence <human_motion> and initial triplet <human_initial_xzr>",
+                "Generate a full [x-position y-position orientation] trajectory based on the motion sequence <human_motion> and initial triplet <human_initial_xzr>",
+                "Produce the full sequence of [x-position y-position orientation] from the motion sequence <human_motion> and initial triplet <human_initial_xzr>",
+                "Create the complete path of [x-position y-position orientation] for the human starting from motion sequence <human_motion> and initial triplet <human_initial_xzr>",
+                "Derive the entire sequence of [x-position y-position orientation] starting with motion sequence <human_motion> and the initial triplet <human_initial_xzr>",
+                "Generate a complete sequence of [x-position y-position orientation] from the motion sequence <human_motion> and the initial triplet <human_initial_xzr>",
+                "Formulate a complete trajectory of [x-position y-position orientation] using the motion sequence <human_motion> and the initial triplet <human_initial_xzr>",
+                "Construct the full sequence of [x-position y-position orientation] starting from motion sequence <human_motion> and initial triplet <human_initial_xzr>",
+                "Create the entire sequence of [x-position y-position orientation] for a human based on the motion sequence <human_motion> and initial triplet <human_initial_xzr>",
+                "Develop the full trajectory of [x-position y-position orientation] from the motion sequence <human_motion> and initial triplet <human_initial_xzr>",
+                "Produce a complete series of [x-position y-position orientation] starting from motion sequence <human_motion> and initial triplet <human_initial_xzr>",
+                "Build the comprehensive [x-position y-position orientation] path from the motion sequence <human_motion> and initial triplet <human_initial_xzr>",
+                "Craft the complete trajectory of [x-position y-position orientation] beginning with motion sequence <human_motion> and initial triplet <human_initial_xzr>"
+            ],
+            "tgt": "<human_xzr>",
+            "src_placeholders": [
+                "human_motion",
+                "human_initial_xzr"
+            ],
+            "tgt_placeholders": [
+                "human_xzr"
+            ]
+        },
+        "action-to-caption": {
+            "src": [
+                "Infer the description of an action-reaction human motion. The reaction person's initial [x-position y-position orientation] is <reaction_initial_xzr>, and his initial pose is <reaction_initial_motion>. The action person's initial [x-position y-position orientation] is <action_initial_xzr>, and he is performing <action_motion>",
+                "Describe the sequence of an action-reaction human motion. The person reacting starts at <reaction_initial_xzr> with a pose of <reaction_initial_motion>, while the acting person starts at <action_initial_xzr> performing <action_motion>",
+                "Generate a description for a human motion scenario where the reaction person is initially at <reaction_initial_xzr> with a pose of <reaction_initial_motion>, and the action person is at <action_initial_xzr> performing <action_motion>",
+                "Explain the dynamics of an action-reaction human interaction. The reacting individual is at <reaction_initial_xzr> with <reaction_initial_motion>, while the acting individual begins at <action_initial_xzr> and is doing <action_motion>",
+                "Determine the description for an action-reaction human motion. The person reacting is initially positioned at <reaction_initial_xzr> with a pose of <reaction_initial_motion>. The person acting is initially at <action_initial_xzr> performing <action_motion>",
+                "Outline the action-reaction human movement. The reaction individual's starting point is <reaction_initial_xzr> with the pose <reaction_initial_motion>. The action individual's starting point is <action_initial_xzr> while performing <action_motion>",
+                "Formulate the description of an action-reaction human motion. The reaction person's initial state is [x-position y-position orientation] <reaction_initial_xzr> and pose <reaction_initial_motion>. The action person's initial state is [x-position y-position orientation] <action_initial_xzr> while doing <action_motion>",
+                "Craft a description for an action-reaction motion scenario. The person reacting starts at <reaction_initial_xzr> with the pose <reaction_initial_motion>, while the person acting starts at <action_initial_xzr> performing <action_motion>",
+                "Compose the description for a human motion interaction. The reaction individual's initial [x-position y-position orientation] is <reaction_initial_xzr>, and his pose is <reaction_initial_motion>. The action individual's initial [x-position y-position orientation] is <action_initial_xzr>, and he's doing <action_motion>",
+                "Detail the interaction in an action-reaction scenario. The person responding is initially at <reaction_initial_xzr> with <reaction_initial_motion>, while the person initiating action is at <action_initial_xzr> performing <action_motion>",
+                "Illustrate an action-reaction human motion. The reaction person's initial coordinates and orientation are <reaction_initial_xzr> and his initial pose is <reaction_initial_motion>. The action person's initial coordinates and orientation are <action_initial_xzr>, and he is engaged in <action_motion>",
+                "Depict the action-reaction motion. The reacting person is initially at <reaction_initial_xzr> with pose <reaction_initial_motion>, and the acting person is initially at <action_initial_xzr> engaged in <action_motion>",
+                "Describe the initial conditions of an action-reaction human motion. The reaction person starts at <reaction_initial_xzr> with the pose <reaction_initial_motion>. The action person begins at <action_initial_xzr> performing <action_motion>",
+                "Write a description for an action-reaction motion. The person reacting has initial [x-position y-position orientation] <reaction_initial_xzr> with pose <reaction_initial_motion>, while the person acting starts at <action_initial_xzr> doing <action_motion>",
+                "Generate a sequence description for an action-reaction motion. The person responding starts at <reaction_initial_xzr> with pose <reaction_initial_motion>, while the acting person begins at <action_initial_xzr> performing <action_motion>",
+                "Provide a narrative for an action-reaction human motion. The reacting individual has an initial [x-position y-position orientation] of <reaction_initial_xzr> and his pose is <reaction_initial_motion>. The acting individual's initial [x-position y-position orientation] is <action_initial_xzr>, engaged in <action_motion>",
+                "Create a description of an action-reaction human motion. The reaction person's initial [x-position y-position orientation] is <reaction_initial_xzr>, and his pose is <reaction_initial_motion>. The action person's initial [x-position y-position orientation] is <action_initial_xzr>, performing <action_motion>",
+                "Formulate a human motion description for an action-reaction scenario. The reacting individual starts from <reaction_initial_xzr> with a pose of <reaction_initial_motion>. The acting individual starts from <action_initial_xzr> and performs <action_motion>",
+                "Detail the initial configuration of an action-reaction human motion. The reacting person is located at <reaction_initial_xzr> with a pose of <reaction_initial_motion>, while the acting person is at <action_initial_xzr> and performing <action_motion>",
+                "Explain an action-reaction human motion scenario. The reaction person's initial [x-position y-position orientation] is <reaction_initial_xzr>, and his pose is <reaction_initial_motion>. The action person's initial [x-position y-position orientation] is <action_initial_xzr>, and he is involved in <action_motion>"
+            ],
+            "tgt": "<caption>",
+            "src_placeholders": [
+                "reaction_initial_xzr",
+                "reaction_initial_motion",
+                "action_initial_xzr",
+                "action_motion"
+            ],
+            "tgt_placeholders": [
+                "caption"
+            ]
+        },
+        "given_action_1_and_reaction_2": {
+            "src": [
+                "given the the initial [x-position y-position orientation] triplet of action <action_initial_xzr> and first half of action: <action_motion_p1>, and the middle [x-position y-position orientation] of reaction <reaction_mid_xzr> and second half of reaction <reaction_motion_p2>, complete the first half of reaction and second half of action",
+                "given the starting position and orientation of action <action_initial_xzr> and its first segment <action_motion_p1>, along with the midpoint position and orientation of reaction <reaction_mid_xzr> and its latter segment <reaction_motion_p2>, determine the first segment of reaction and the latter segment of action",
+                "starting from the initial triplet of action <action_initial_xzr> and the first segment of action <action_motion_p1>, and using the midpoint triplet of reaction <reaction_mid_xzr> and second segment <reaction_motion_p2>, fill in the first segment of reaction and the second segment of action",
+                "using the initial [x, y, orientation] of action <action_initial_xzr> and the first part <action_motion_p1>, combined with the middle [x, y, orientation] of reaction <reaction_mid_xzr> and its second part <reaction_motion_p2>, generate the initial part of reaction and the latter part of action",
+                "with the start triplet of action <action_initial_xzr> and its first phase <action_motion_p1>, plus the midpoint triplet of reaction <reaction_mid_xzr> and its latter phase <reaction_motion_p2>, complete the initial phase of reaction and latter phase of action",
+                "given action starting at <action_initial_xzr> with motion <action_motion_p1>, and reaction at midpoint <reaction_mid_xzr> with motion <reaction_motion_p2>, complete the first segment of reaction and the second segment of action",
+                "starting with the initial position and orientation of action <action_initial_xzr> and the first phase <action_motion_p1>, along with the mid position and orientation of reaction <reaction_mid_xzr> and the second phase <reaction_motion_p2>, complete the first phase of reaction and the second phase of action",
+                "given the initial triplet of action <action_initial_xzr> and the first half <action_motion_p1>, and the midpoint triplet of reaction <reaction_mid_xzr> with its second half <reaction_motion_p2>, complete the first half of reaction and the second half of action",
+                "provided the initial triplet of action <action_initial_xzr> and the first section <action_motion_p1>, as well as the midpoint triplet of reaction <reaction_mid_xzr> and its final section <reaction_motion_p2>, generate the initial section of reaction and the final section of action",
+                "using the initial coordinates and orientation of action <action_initial_xzr> and the first segment <action_motion_p1>, in conjunction with the midpoint coordinates and orientation of reaction <reaction_mid_xzr> and its second segment <reaction_motion_p2>, complete the initial segment of reaction and the second segment of action",
+                "given the initial position, orientation, and motion segment of action <action_initial_xzr> and <action_motion_p1>, along with the midpoint position, orientation, and motion segment of reaction <reaction_mid_xzr> and <reaction_motion_p2>, generate the initial segment of reaction and the latter segment of action",
+                "starting from the initial triplet [x, y, orientation] of action <action_initial_xzr> and its first segment <action_motion_p1>, and using the midpoint [x, y, orientation] of reaction <reaction_mid_xzr> and its second segment <reaction_motion_p2>, complete the first segment of reaction and second segment of action",
+                "given the starting triplet of action <action_initial_xzr> and the first segment <action_motion_p1>, along with the midpoint triplet of reaction <reaction_mid_xzr> and its second segment <reaction_motion_p2>, determine the first segment of reaction and the second segment of action",
+                "with the initial [x, y, orientation] of action <action_initial_xzr> and its initial segment <action_motion_p1>, and the midpoint [x, y, orientation] of reaction <reaction_mid_xzr> and its latter segment <reaction_motion_p2>, fill in the initial segment of reaction and latter segment of action",
+                "given the triplet [x, y, orientation] of action at start <action_initial_xzr> and its motion <action_motion_p1>, combined with the triplet [x, y, orientation] of reaction at midpoint <reaction_mid_xzr> and its motion <reaction_motion_p2>, complete the initial segment of reaction and the latter segment of action",
+                "starting with the initial triplet of action <action_initial_xzr> and its initial motion <action_motion_p1>, and using the midpoint triplet of reaction <reaction_mid_xzr> and its latter motion <reaction_motion_p2>, generate the initial motion of reaction and the latter motion of action",
+                "provided the initial triplet of action <action_initial_xzr> and its first motion segment <action_motion_p1>, along with the midpoint triplet of reaction <reaction_mid_xzr> and its second motion segment <reaction_motion_p2>, complete the initial motion of reaction and the second motion of action",
+                "using the initial coordinates and orientation of action <action_initial_xzr> and its first motion <action_motion_p1>, along with the midpoint coordinates and orientation of reaction <reaction_mid_xzr> and its latter motion <reaction_motion_p2>, generate the initial motion of reaction and the latter motion of action",
+                "with the initial [x, y, orientation] triplet of action <action_initial_xzr> and its first motion segment <action_motion_p1>, and the midpoint [x, y, orientation] triplet of reaction <reaction_mid_xzr> and its second motion segment <reaction_motion_p2>, complete the first motion segment of reaction and the second motion segment of action",
+                "given the initial [x, y, orientation] triplet of action <action_initial_xzr> and the first part of its motion <action_motion_p1>, and the midpoint [x, y, orientation] triplet of reaction <reaction_mid_xzr> and the second part of its motion <reaction_motion_p2>, generate the first part of the reaction and the second part of the action"
+            ],
+            "tgt": "First half of reaction: <reaction_motion_p1>. Second half of action: <action_motion_p2>",
+            "src_placeholders": [
+                "action_initial_xzr",
+                "action_motion_p1",
+                "reaction_mid_xzr",
+                "reaction_motion_p2"
+            ],
+            "tgt_placeholders": [
+                "reaction_motion_p1",
+                "action_motion_p2"
+            ]
+        },
+        "given_reaction_1_and_action_2": {
+            "src": [
+                "given the initial [x-position y-position orientation] triplet of reaction <reaction_initial_xzr> and first half of reaction: <reaction_motion_p1>, and the middle [x-position y-position orientation] of action <action_mid_xzr> and second half of action <action_motion_p2>, complete the first half of action and second half of reaction",
+                "given the starting position and orientation of reaction <reaction_initial_xzr> and its first segment <reaction_motion_p1>, along with the midpoint position and orientation of action <action_mid_xzr> and its latter segment <action_motion_p2>, determine the first segment of action and the latter segment of reaction",
+                "starting from the initial triplet of reaction <reaction_initial_xzr> and the first segment of reaction <reaction_motion_p1>, and using the midpoint triplet of action <action_mid_xzr> and second segment <action_motion_p2>, fill in the first segment of action and the second segment of reaction",
+                "using the initial [x, y, orientation] of reaction <reaction_initial_xzr> and the first part <reaction_motion_p1>, combined with the middle [x, y, orientation] of action <action_mid_xzr> and its second part <action_motion_p2>, generate the initial part of action and the latter part of reaction",
+                "with the start triplet of reaction <reaction_initial_xzr> and its first phase <reaction_motion_p1>, plus the midpoint triplet of action <action_mid_xzr> and its latter phase <action_motion_p2>, complete the initial phase of action and latter phase of reaction",
+                "given reaction starting at <reaction_initial_xzr> with motion <reaction_motion_p1>, and action at midpoint <action_mid_xzr> with motion <action_motion_p2>, complete the first segment of action and the second segment of reaction",
+                "starting with the initial position and orientation of reaction <reaction_initial_xzr> and the first phase <reaction_motion_p1>, along with the mid position and orientation of action <action_mid_xzr> and the second phase <action_motion_p2>, complete the first phase of action and the second phase of reaction",
+                "given the initial triplet of reaction <reaction_initial_xzr> and the first half <reaction_motion_p1>, and the midpoint triplet of action <action_mid_xzr> with its second half <action_motion_p2>, complete the first half of action and the second half of reaction",
+                "provided the initial triplet of reaction <reaction_initial_xzr> and the first section <reaction_motion_p1>, as well as the midpoint triplet of action <action_mid_xzr> and its final section <action_motion_p2>, generate the initial section of action and the final section of reaction",
+                "using the initial coordinates and orientation of reaction <reaction_initial_xzr> and the first segment <reaction_motion_p1>, in conjunction with the midpoint coordinates and orientation of action <action_mid_xzr> and its second segment <action_motion_p2>, complete the initial segment of action and the second segment of reaction",
+                "given the initial position, orientation, and motion segment of reaction <reaction_initial_xzr> and <reaction_motion_p1>, along with the midpoint position, orientation, and motion segment of action <action_mid_xzr> and <action_motion_p2>, generate the initial segment of action and the latter segment of reaction",
+                "starting from the initial triplet [x, y, orientation] of reaction <reaction_initial_xzr> and its first segment <reaction_motion_p1>, and using the midpoint [x, y, orientation] of action <action_mid_xzr> and its second segment <action_motion_p2>, complete the first segment of action and second segment of reaction",
+                "given the starting triplet of reaction <reaction_initial_xzr> and the first segment <reaction_motion_p1>, along with the midpoint triplet of action <action_mid_xzr> and its second segment <action_motion_p2>, determine the first segment of action and the second segment of reaction",
+                "with the initial [x, y, orientation] of reaction <reaction_initial_xzr> and its initial segment <reaction_motion_p1>, and the midpoint [x, y, orientation] of action <action_mid_xzr> and its latter segment <action_motion_p2>, fill in the initial segment of action and latter segment of reaction",
+                "given the triplet [x, y, orientation] of reaction at start <reaction_initial_xzr> and its motion <reaction_motion_p1>, combined with the triplet [x, y, orientation] of action at midpoint <action_mid_xzr> and its motion <action_motion_p2>, complete the initial segment of action and the latter segment of reaction",
+                "starting with the initial triplet of reaction <reaction_initial_xzr> and its initial motion <reaction_motion_p1>, and using the midpoint triplet of action <action_mid_xzr> and its latter motion <action_motion_p2>, generate the initial motion of action and the latter motion of reaction",
+                "provided the initial triplet of reaction <reaction_initial_xzr> and its first motion segment <reaction_motion_p1>, along with the midpoint triplet of action <action_mid_xzr> and its second motion segment <action_motion_p2>, complete the initial motion of action and the second motion of reaction",
+                "using the initial coordinates and orientation of reaction <reaction_initial_xzr> and its first motion <reaction_motion_p1>, along with the midpoint coordinates and orientation of action <action_mid_xzr> and its latter motion <action_motion_p2>, generate the initial motion of action and the latter motion of reaction",
+                "with the initial [x, y, orientation] triplet of reaction <reaction_initial_xzr> and its first motion segment <reaction_motion_p1>, and the midpoint [x, y, orientation] triplet of action <action_mid_xzr> and its second motion segment <action_motion_p2>, complete the first motion segment of action and the second motion segment of reaction",
+                "given the initial [x, y, orientation] triplet of reaction <reaction_initial_xzr> and the first part of its motion <reaction_motion_p1>, and the midpoint [x, y, orientation] triplet of action <action_mid_xzr> and the second part of its motion <action_motion_p2>, generate the first part of the action and the second part of the reaction"
+            ],
+            "tgt": "First half of action: <action_motion_p1>. Second half of reaction: <reaction_motion_p2>",
+            "src_placeholders": [
+                "reaction_initial_xzr",
+                "reaction_motion_p1",
+                "action_mid_xzr",
+                "action_motion_p2"
+            ],
+            "tgt_placeholders": [
+                "action_motion_p1",
+                "reaction_motion_p2"
+            ]
+        },
+        "action_and_caption_to_reaction": {
+            "src": [
+                "Complete reaction motion whose initial [x-position y-position orientation] triplet is <reaction_initial_xzr> and initial pose is <reaction_initial_motion>, based on the action-reaction description and action motion. the description is '<caption>' , the initial [x-position y-position orientation] triplet of action is <action_initial_xzr> and action motion is <action_motion>",
+                "Based on the action-reaction description and action motion, generate the complete reaction motion starting from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion>. Description: '<caption>', action's initial [x-position y-position orientation] triplet: <action_initial_xzr>, action motion: <action_motion>",
+                "Generate the full reaction motion from the initial [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> using the action-reaction description and action motion provided. Description: '<caption>', action's initial [x-position y-position orientation] triplet: <action_initial_xzr>, action motion: <action_motion>",
+                "Starting from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion>, complete the reaction motion based on the description '<caption>' and action motion. The action has an initial [x-position y-position orientation] triplet <action_initial_xzr> and action motion <action_motion>",
+                "Using the description '<caption>' and action motion, complete the reaction motion from the initial [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion>. The action motion starts from [x-position y-position orientation] triplet <action_initial_xzr> and continues with <action_motion>",
+                "With the action's initial [x-position y-position orientation] triplet <action_initial_xzr> and motion <action_motion>, generate the reaction motion starting from <reaction_initial_xzr> and initial pose <reaction_initial_motion>. Description: '<caption>'",
+                "Create the complete reaction motion from <reaction_initial_xzr> and initial pose <reaction_initial_motion> by using the action-reaction description '<caption>' and action motion. The initial [x-position y-position orientation] triplet of action is <action_initial_xzr>, and the action motion is <action_motion>",
+                "Construct the reaction motion starting from the initial [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> based on the action-reaction description '<caption>' and action motion. Action's initial [x-position y-position orientation] triplet is <action_initial_xzr> and action motion is <action_motion>",
+                "Develop the reaction motion from the initial [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion>, guided by the description '<caption>' and action motion. Action's initial [x-position y-position orientation] triplet: <action_initial_xzr>, action motion: <action_motion>",
+                "Finish the reaction motion beginning from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> using the provided description '<caption>' and action motion. Action starts from [x-position y-position orientation] triplet <action_initial_xzr> and moves as <action_motion>",
+                "Generate reaction motion from initial [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> using the action description '<caption>' and motion details. Action's starting [x-position y-position orientation] triplet: <action_initial_xzr>, action motion: <action_motion>",
+                "Using the action motion and description '<caption>', develop the complete reaction motion starting from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion>. Initial [x-position y-position orientation] triplet for action is <action_initial_xzr> and action motion is <action_motion>",
+                "Construct a reaction motion sequence from the initial [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> based on action-reaction description '<caption>' and action motion. Action begins at [x-position y-position orientation] triplet <action_initial_xzr> and proceeds with <action_motion>",
+                "Create a complete reaction motion starting from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion>, guided by the action-reaction description '<caption>' and action motion. Action's initial [x-position y-position orientation] triplet is <action_initial_xzr> and action motion is <action_motion>",
+                "Develop a full reaction motion from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> using the action-reaction description '<caption>' and action motion. Action starts at [x-position y-position orientation] triplet <action_initial_xzr> and follows motion <action_motion>",
+                "Generate the reaction motion starting from initial [x-position y-position orientation] triplet <reaction_initial_xzr> and pose <reaction_initial_motion> based on the provided description '<caption>' and action motion. The action's initial [x-position y-position orientation] triplet is <action_initial_xzr>, and the action motion is <action_motion>",
+                "Create reaction motion beginning with [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> using the description '<caption>' and action motion. Action starts from [x-position y-position orientation] triplet <action_initial_xzr> and proceeds with motion <action_motion>",
+                "Complete the reaction motion from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> as per the description '<caption>' and action motion. Action starts at [x-position y-position orientation] triplet <action_initial_xzr> and continues with motion <action_motion>",
+                "Form the reaction motion starting from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> using the description '<caption>' and action motion. Action has an initial [x-position y-position orientation] triplet of <action_initial_xzr> and motion <action_motion>",
+                "Initiate the reaction motion from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion>, guided by the description '<caption>' and action motion. Action begins with [x-position y-position orientation] triplet <action_initial_xzr> and follows motion <action_motion>"
+            ],
+            "tgt": "<reaction_motion>",
+            "src_placeholders": [
+                "action_initial_xzr",
+                "action_motion",
+                "reaction_initial_xzr",
+                "reaction_initial_motion",
+                "caption"
+            ],
+            "tgt_placeholders": [
+                "reaction_motion"
+            ]
+        },
+        "clipped_action_caption_to_reaction": {
+            "src": [
+                "Complete reaction motion whose initial [x-position y-position orientation] triplet is <reaction_initial_xzr_clip> and initial pose is <reaction_initial_motion_clip>, based on the action-reaction description and action motion. the description is '<caption>' , the initial [x-position y-position orientation] triplet of action is <action_initial_xzr_clip> and action motion is <action_motion_clip>",
+                "Based on the action-reaction description and action motion, generate the complete reaction motion starting from [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip>. Description: '<caption>', action's initial [x-position y-position orientation] triplet: <action_initial_xzr_clip>, action motion: <action_motion_clip>",
+                "Generate the full reaction motion from the initial [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip> using the action-reaction description and action motion provided. Description: '<caption>', action's initial [x-position y-position orientation] triplet: <action_initial_xzr_clip>, action motion: <action_motion_clip>",
+                "Starting from [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip>, complete the reaction motion based on the description '<caption>' and action motion. The action has an initial [x-position y-position orientation] triplet <action_initial_xzr_clip> and action motion <action_motion_clip>",
+                "Using the description '<caption>' and action motion, complete the reaction motion from the initial [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip>. The action motion starts from [x-position y-position orientation] triplet <action_initial_xzr_clip> and continues with <action_motion_clip>",
+                "With the action's initial [x-position y-position orientation] triplet <action_initial_xzr_clip> and motion <action_motion_clip>, generate the reaction motion starting from <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip>. Description: '<caption>'",
+                "Create the complete reaction motion from <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip> by using the action-reaction description '<caption>' and action motion. The initial [x-position y-position orientation] triplet of action is <action_initial_xzr_clip>, and the action motion is <action_motion_clip>",
+                "Construct the reaction motion starting from the initial [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip> based on the action-reaction description '<caption>' and action motion. Action's initial [x-position y-position orientation] triplet is <action_initial_xzr_clip> and action motion is <action_motion_clip>",
+                "Develop the reaction motion from the initial [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip>, guided by the description '<caption>' and action motion. Action's initial [x-position y-position orientation] triplet: <action_initial_xzr_clip>, action motion: <action_motion_clip>",
+                "Finish the reaction motion beginning from [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip> using the provided description '<caption>' and action motion. Action starts from [x-position y-position orientation] triplet <action_initial_xzr_clip> and moves as <action_motion_clip>",
+                "Generate reaction motion from initial [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip> using the action description '<caption>' and motion details. Action's starting [x-position y-position orientation] triplet: <action_initial_xzr_clip>, action motion: <action_motion_clip>",
+                "Using the action motion and description '<caption>', develop the complete reaction motion starting from [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip>. Initial [x-position y-position orientation] triplet for action is <action_initial_xzr_clip> and action motion is <action_motion_clip>",
+                "Construct a reaction motion sequence from the initial [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip> based on action-reaction description '<caption>' and action motion. Action begins at [x-position y-position orientation] triplet <action_initial_xzr_clip> and proceeds with <action_motion_clip>",
+                "Create a complete reaction motion starting from [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip>, guided by the action-reaction description '<caption>' and action motion. Action's initial [x-position y-position orientation] triplet is <action_initial_xzr_clip> and action motion is <action_motion_clip>",
+                "Develop a full reaction motion from [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip> using the action-reaction description '<caption>' and action motion. Action starts at [x-position y-position orientation] triplet <action_initial_xzr_clip> and follows motion <action_motion_clip>",
+                "Generate the reaction motion starting from initial [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and pose <reaction_initial_motion_clip> based on the provided description '<caption>' and action motion. The action's initial [x-position y-position orientation] triplet is <action_initial_xzr_clip>, and the action motion is <action_motion_clip>",
+                "Create reaction motion beginning with [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip> using the description '<caption>' and action motion. Action starts from [x-position y-position orientation] triplet <action_initial_xzr_clip> and proceeds with motion <action_motion_clip>",
+                "Complete the reaction motion from [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip> as per the description '<caption>' and action motion. Action starts at [x-position y-position orientation] triplet <action_initial_xzr_clip> and continues with motion <action_motion_clip>",
+                "Form the reaction motion starting from [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip> using the description '<caption>' and action motion. Action has an initial [x-position y-position orientation] triplet of <action_initial_xzr_clip> and motion <action_motion_clip>",
+                "Initiate the reaction motion from [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip>, guided by the description '<caption>' and action motion. Action begins with [x-position y-position orientation] triplet <action_initial_xzr_clip> and follows motion <action_motion_clip>"
+            ],
+            "tgt": "<reaction_motion_clip>",
+            "src_placeholders": [
+                "action_initial_xzr_clip",
+                "action_motion_clip",
+                "reaction_initial_xzr_clip",
+                "reaction_initial_motion_clip",
+                "caption"
+            ],
+            "tgt_placeholders": [
+                "reaction_motion_clip"
+            ]
+        },
+        "h3d_motion_to_caption": {
+            "src": [
+                "describe single person motion: <h3d_motion>"
+            ],
+            "tgt": "<h3d_caption>",
+            "src_placeholders": [
+                "h3d_motion"
+            ],
+            "tgt_placeholders": [
+                "h3d_caption"
+            ]
+        },
+        "h3d_caption_to_motion": {
+            "src": [
+                "predict single person motion according to the description: <h3d_caption>"
+            ],
+            "tgt": "<h3d_motion>",
+            "src_placeholders": [
+                "h3d_caption"
+            ],
+            "tgt_placeholders": [
+                "h3d_motion"
+            ]
+        }
+    },
+    "finetune": {
+        "causal_action_and_caption_to_reaction": {
+            "src": [
+                "Complete reaction motion whose initial [x-position y-position orientation] triplet is <reaction_initial_xzr> and initial pose is <reaction_initial_motion>, based on the action-reaction description and action motion. the description is '<caption>' , the initial [x-position y-position orientation] triplet of action is <action_initial_xzr> and action motion is: <action_motion>",
+                "Based on the action-reaction description and action motion, generate the complete reaction motion starting from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion>. Description: '<caption>', action's initial [x-position y-position orientation] triplet: <action_initial_xzr>, action motion: <action_motion>",
+                "Generate the full reaction motion from the initial [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> using the action-reaction description and action motion provided. Description: '<caption>', action's initial [x-position y-position orientation] triplet: <action_initial_xzr>, action motion: <action_motion>",
+                "Starting from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion>, complete the reaction motion based on the description '<caption>' and action motion. The action has an initial [x-position y-position orientation] triplet <action_initial_xzr> and action motion: <action_motion>",
+                "Using the description '<caption>' and action motion, complete the reaction motion from the initial [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion>. The action motion starts from [x-position y-position orientation] triplet <action_initial_xzr> and continues with: <action_motion>",
+                "Create the complete reaction motion from <reaction_initial_xzr> and initial pose <reaction_initial_motion> by using the action-reaction description '<caption>' and action motion. The initial [x-position y-position orientation] triplet of action is <action_initial_xzr>, and the action motion is: <action_motion>",
+                "Construct the reaction motion starting from the initial [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> based on the action-reaction description '<caption>' and action motion. Action's initial [x-position y-position orientation] triplet is <action_initial_xzr> and action motion is: <action_motion>",
+                "Develop the reaction motion from the initial [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion>, guided by the description '<caption>' and action motion. Action's initial [x-position y-position orientation] triplet: <action_initial_xzr>, action motion: <action_motion>",
+                "Finish the reaction motion beginning from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> using the provided description '<caption>' and action motion. Action starts from [x-position y-position orientation] triplet <action_initial_xzr> and moves as: <action_motion>",
+                "Generate reaction motion from initial [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> using the action description '<caption>' and motion details. Action's starting [x-position y-position orientation] triplet: <action_initial_xzr>, action motion: <action_motion>",
+                "Using the action motion and description '<caption>', develop the complete reaction motion starting from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion>. Initial [x-position y-position orientation] triplet for action is <action_initial_xzr> and action motion is: <action_motion>",
+                "Construct a reaction motion sequence from the initial [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> based on action-reaction description '<caption>' and action motion. Action begins at [x-position y-position orientation] triplet <action_initial_xzr> and proceeds with: <action_motion>",
+                "Create a complete reaction motion starting from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion>, guided by the action-reaction description '<caption>' and action motion. Action's initial [x-position y-position orientation] triplet is <action_initial_xzr> and action motion is: <action_motion>",
+                "Develop a full reaction motion from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> using the action-reaction description '<caption>' and action motion. Action starts at [x-position y-position orientation] triplet <action_initial_xzr> and follows motion: <action_motion>",
+                "Generate the reaction motion starting from initial [x-position y-position orientation] triplet <reaction_initial_xzr> and pose <reaction_initial_motion> based on the provided description '<caption>' and action motion. The action's initial [x-position y-position orientation] triplet is <action_initial_xzr>, and the action motion is: <action_motion>",
+                "Create reaction motion beginning with [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> using the description '<caption>' and action motion. Action starts from [x-position y-position orientation] triplet <action_initial_xzr> and proceeds with motion: <action_motion>",
+                "Complete the reaction motion from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> as per the description '<caption>' and action motion. Action starts at [x-position y-position orientation] triplet <action_initial_xzr> and continues with motion: <action_motion>",
+                "Form the reaction motion starting from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> using the description '<caption>' and action motion. Action has an initial [x-position y-position orientation] triplet of <action_initial_xzr> and motion: <action_motion>",
+                "Initiate the reaction motion from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion>, guided by the description '<caption>' and action motion. Action begins with [x-position y-position orientation] triplet <action_initial_xzr> and follows motion: <action_motion>"
+            ],
+            "tgt": "<reaction_motion>",
+            "src_placeholders": [
+                "action_initial_xzr",
+                "action_motion",
+                "reaction_initial_xzr",
+                "reaction_initial_motion",
+                "caption"
+            ],
+            "tgt_placeholders": [
+                "reaction_motion"
+            ]
+        },
+        "causal_clipped_action_caption_to_reaction": {
+            "src": [
+                "Complete reaction motion whose initial [x-position y-position orientation] triplet is <reaction_initial_xzr_clip> and initial pose is <reaction_initial_motion_clip>, based on the action-reaction description and action motion. the description is '<caption>' , the initial [x-position y-position orientation] triplet of action is <action_initial_xzr_clip> and action motion is: <action_motion_clip>",
+                "Based on the action-reaction description and action motion, generate the complete reaction motion starting from [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip>. Description: '<caption>', action's initial [x-position y-position orientation] triplet: <action_initial_xzr_clip>, action motion: <action_motion_clip>",
+                "Generate the full reaction motion from the initial [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip> using the action-reaction description and action motion provided. Description: '<caption>', action's initial [x-position y-position orientation] triplet: <action_initial_xzr_clip>, action motion: <action_motion_clip>",
+                "Starting from [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip>, complete the reaction motion based on the description '<caption>' and action motion. The action has an initial [x-position y-position orientation] triplet <action_initial_xzr_clip> and action motion: <action_motion_clip>",
+                "Using the description '<caption>' and action motion, complete the reaction motion from the initial [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip>. The action motion starts from [x-position y-position orientation] triplet <action_initial_xzr_clip> and continues with: <action_motion_clip>",
+                "Create the complete reaction motion from <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip> by using the action-reaction description '<caption>' and action motion. The initial [x-position y-position orientation] triplet of action is <action_initial_xzr_clip>, and the action motion is: <action_motion_clip>",
+                "Construct the reaction motion starting from the initial [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip> based on the action-reaction description '<caption>' and action motion. Action's initial [x-position y-position orientation] triplet is <action_initial_xzr_clip> and action motion is: <action_motion_clip>",
+                "Develop the reaction motion from the initial [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip>, guided by the description '<caption>' and action motion. Action's initial [x-position y-position orientation] triplet: <action_initial_xzr_clip>, action motion: <action_motion_clip>",
+                "Finish the reaction motion beginning from [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip> using the provided description '<caption>' and action motion. Action starts from [x-position y-position orientation] triplet <action_initial_xzr_clip> and moves as: <action_motion_clip>",
+                "Generate reaction motion from initial [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip> using the action description '<caption>' and motion details. Action's starting [x-position y-position orientation] triplet: <action_initial_xzr_clip>, action motion: <action_motion_clip>",
+                "Using the action motion and description '<caption>', develop the complete reaction motion starting from [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip>. Initial [x-position y-position orientation] triplet for action is <action_initial_xzr_clip> and action motion is: <action_motion_clip>",
+                "Construct a reaction motion sequence from the initial [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip> based on action-reaction description '<caption>' and action motion. Action begins at [x-position y-position orientation] triplet <action_initial_xzr_clip> and proceeds with: <action_motion_clip>",
+                "Create a complete reaction motion starting from [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip>, guided by the action-reaction description '<caption>' and action motion. Action's initial [x-position y-position orientation] triplet is <action_initial_xzr_clip> and action motion is: <action_motion_clip>",
+                "Develop a full reaction motion from [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip> using the action-reaction description '<caption>' and action motion. Action starts at [x-position y-position orientation] triplet <action_initial_xzr_clip> and follows motion: <action_motion_clip>",
+                "Generate the reaction motion starting from initial [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and pose <reaction_initial_motion_clip> based on the provided description '<caption>' and action motion. The action's initial [x-position y-position orientation] triplet is <action_initial_xzr_clip>, and the action motion is: <action_motion_clip>",
+                "Create reaction motion beginning with [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip> using the description '<caption>' and action motion. Action starts from [x-position y-position orientation] triplet <action_initial_xzr_clip> and proceeds with motion: <action_motion_clip>",
+                "Complete the reaction motion from [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip> as per the description '<caption>' and action motion. Action starts at [x-position y-position orientation] triplet <action_initial_xzr_clip> and continues with motion: <action_motion_clip>",
+                "Form the reaction motion starting from [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip> using the description '<caption>' and action motion. Action has an initial [x-position y-position orientation] triplet of <action_initial_xzr_clip> and motion: <action_motion_clip>",
+                "Initiate the reaction motion from [x-position y-position orientation] triplet <reaction_initial_xzr_clip> and initial pose <reaction_initial_motion_clip>, guided by the description '<caption>' and action motion. Action begins with [x-position y-position orientation] triplet <action_initial_xzr_clip> and follows motion: <action_motion_clip>"
+            ],
+            "tgt": "<reaction_motion_clip>",
+            "src_placeholders": [
+                "action_initial_xzr_clip",
+                "action_motion_clip",
+                "reaction_initial_xzr_clip",
+                "reaction_initial_motion_clip",
+                "caption"
+            ],
+            "tgt_placeholders": [
+                "reaction_motion_clip"
+            ]
+        },
+        "causal_action_to_reaction": {
+            "src": [
+                "Complete reaction motion whose initial [x-position y-position orientation] triplet is <reaction_initial_xzr> and initial pose is <reaction_initial_motion>, based on the action-reaction description and action motion. the description is 'empty caption' , the initial [x-position y-position orientation] triplet of action is <action_initial_xzr> and action motion is: <action_motion>",
+                "Based on the action-reaction description and action motion, generate the complete reaction motion starting from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion>. Description: 'empty caption', action's initial [x-position y-position orientation] triplet: <action_initial_xzr>, action motion: <action_motion>",
+                "Generate the full reaction motion from the initial [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> using the action-reaction description and action motion provided. Description: 'empty caption', action's initial [x-position y-position orientation] triplet: <action_initial_xzr>, action motion: <action_motion>",
+                "Starting from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion>, complete the reaction motion based on the description 'empty caption' and action motion. The action has an initial [x-position y-position orientation] triplet <action_initial_xzr> and action motion: <action_motion>",
+                "Using the description 'empty caption' and action motion, complete the reaction motion from the initial [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion>. The action motion starts from [x-position y-position orientation] triplet <action_initial_xzr> and continues with: <action_motion>",
+                "Create the complete reaction motion from <reaction_initial_xzr> and initial pose <reaction_initial_motion> by using the action-reaction description 'empty caption' and action motion. The initial [x-position y-position orientation] triplet of action is <action_initial_xzr>, and the action motion is: <action_motion>",
+                "Construct the reaction motion starting from the initial [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> based on the action-reaction description 'empty caption' and action motion. Action's initial [x-position y-position orientation] triplet is <action_initial_xzr> and action motion is: <action_motion>",
+                "Develop the reaction motion from the initial [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion>, guided by the description 'empty caption' and action motion. Action's initial [x-position y-position orientation] triplet: <action_initial_xzr>, action motion: <action_motion>",
+                "Finish the reaction motion beginning from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> using the provided description 'empty caption' and action motion. Action starts from [x-position y-position orientation] triplet <action_initial_xzr> and moves as: <action_motion>",
+                "Generate reaction motion from initial [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> using the action description 'empty caption' and motion details. Action's starting [x-position y-position orientation] triplet: <action_initial_xzr>, action motion: <action_motion>",
+                "Using the action motion and description 'empty caption', develop the complete reaction motion starting from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion>. Initial [x-position y-position orientation] triplet for action is <action_initial_xzr> and action motion is: <action_motion>",
+                "Construct a reaction motion sequence from the initial [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> based on action-reaction description 'empty caption' and action motion. Action begins at [x-position y-position orientation] triplet <action_initial_xzr> and proceeds with: <action_motion>",
+                "Create a complete reaction motion starting from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion>, guided by the action-reaction description 'empty caption' and action motion. Action's initial [x-position y-position orientation] triplet is <action_initial_xzr> and action motion is: <action_motion>",
+                "Develop a full reaction motion from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> using the action-reaction description 'empty caption' and action motion. Action starts at [x-position y-position orientation] triplet <action_initial_xzr> and follows motion: <action_motion>",
+                "Generate the reaction motion starting from initial [x-position y-position orientation] triplet <reaction_initial_xzr> and pose <reaction_initial_motion> based on the provided description 'empty caption' and action motion. The action's initial [x-position y-position orientation] triplet is <action_initial_xzr>, and the action motion is: <action_motion>",
+                "Create reaction motion beginning with [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> using the description 'empty caption' and action motion. Action starts from [x-position y-position orientation] triplet <action_initial_xzr> and proceeds with motion: <action_motion>",
+                "Complete the reaction motion from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> as per the description 'empty caption' and action motion. Action starts at [x-position y-position orientation] triplet <action_initial_xzr> and continues with motion: <action_motion>",
+                "Form the reaction motion starting from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> using the description 'empty caption' and action motion. Action has an initial [x-position y-position orientation] triplet of <action_initial_xzr> and motion: <action_motion>",
+                "Initiate the reaction motion from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion>, guided by the description 'empty caption' and action motion. Action begins with [x-position y-position orientation] triplet <action_initial_xzr> and follows motion: <action_motion>"
+            ],
+            "tgt": "<reaction_motion>",
+            "src_placeholders": [
+                "action_initial_xzr",
+                "action_motion",
+                "reaction_initial_xzr",
+                "reaction_initial_motion"
+            ],
+            "tgt_placeholders": [
+                "reaction_motion"
+            ]
+        },
+        "action-to-caption": {
+            "src": [
+                "Infer the description of an action-reaction human motion. The reaction person's initial [x-position y-position orientation] is <reaction_initial_xzr>, and his initial pose is <reaction_initial_motion>. The action person's initial [x-position y-position orientation] is <action_initial_xzr>, and he is performing <ft_m2t_motion>",
+                "Describe the sequence of an action-reaction human motion. The person reacting starts at <reaction_initial_xzr> with a pose of <reaction_initial_motion>, while the acting person starts at <action_initial_xzr> performing <ft_m2t_motion>",
+                "Generate a description for a human motion scenario where the reaction person is initially at <reaction_initial_xzr> with a pose of <reaction_initial_motion>, and the action person is at <action_initial_xzr> performing <ft_m2t_motion>",
+                "Explain the dynamics of an action-reaction human interaction. The reacting individual is at <reaction_initial_xzr> with <reaction_initial_motion>, while the acting individual begins at <action_initial_xzr> and is doing <ft_m2t_motion>",
+                "Determine the description for an action-reaction human motion. The person reacting is initially positioned at <reaction_initial_xzr> with a pose of <reaction_initial_motion>. The person acting is initially at <action_initial_xzr> performing <ft_m2t_motion>",
+                "Outline the action-reaction human movement. The reaction individual's starting point is <reaction_initial_xzr> with the pose <reaction_initial_motion>. The action individual's starting point is <action_initial_xzr> while performing <ft_m2t_motion>",
+                "Formulate the description of an action-reaction human motion. The reaction person's initial state is [x-position y-position orientation] <reaction_initial_xzr> and pose <reaction_initial_motion>. The action person's initial state is [x-position y-position orientation] <action_initial_xzr> while doing <ft_m2t_motion>",
+                "Craft a description for an action-reaction motion scenario. The person reacting starts at <reaction_initial_xzr> with the pose <reaction_initial_motion>, while the person acting starts at <action_initial_xzr> performing <ft_m2t_motion>",
+                "Compose the description for a human motion interaction. The reaction individual's initial [x-position y-position orientation] is <reaction_initial_xzr>, and his pose is <reaction_initial_motion>. The action individual's initial [x-position y-position orientation] is <action_initial_xzr>, and he's doing <ft_m2t_motion>",
+                "Detail the interaction in an action-reaction scenario. The person responding is initially at <reaction_initial_xzr> with <reaction_initial_motion>, while the person initiating action is at <action_initial_xzr> performing <ft_m2t_motion>",
+                "Illustrate an action-reaction human motion. The reaction person's initial coordinates and orientation are <reaction_initial_xzr> and his initial pose is <reaction_initial_motion>. The action person's initial coordinates and orientation are <action_initial_xzr>, and he is engaged in <ft_m2t_motion>",
+                "Depict the action-reaction motion. The reacting person is initially at <reaction_initial_xzr> with pose <reaction_initial_motion>, and the acting person is initially at <action_initial_xzr> engaged in <ft_m2t_motion>",
+                "Describe the initial conditions of an action-reaction human motion. The reaction person starts at <reaction_initial_xzr> with the pose <reaction_initial_motion>. The action person begins at <action_initial_xzr> performing <ft_m2t_motion>",
+                "Write a description for an action-reaction motion. The person reacting has initial [x-position y-position orientation] <reaction_initial_xzr> with pose <reaction_initial_motion>, while the person acting starts at <action_initial_xzr> doing <ft_m2t_motion>",
+                "Generate a sequence description for an action-reaction motion. The person responding starts at <reaction_initial_xzr> with pose <reaction_initial_motion>, while the acting person begins at <action_initial_xzr> performing <ft_m2t_motion>",
+                "Provide a narrative for an action-reaction human motion. The reacting individual has an initial [x-position y-position orientation] of <reaction_initial_xzr> and his pose is <reaction_initial_motion>. The acting individual's initial [x-position y-position orientation] is <action_initial_xzr>, engaged in <ft_m2t_motion>",
+                "Create a description of an action-reaction human motion. The reaction person's initial [x-position y-position orientation] is <reaction_initial_xzr>, and his pose is <reaction_initial_motion>. The action person's initial [x-position y-position orientation] is <action_initial_xzr>, performing <ft_m2t_motion>",
+                "Formulate a human motion description for an action-reaction scenario. The reacting individual starts from <reaction_initial_xzr> with a pose of <reaction_initial_motion>. The acting individual starts from <action_initial_xzr> and performs <ft_m2t_motion>",
+                "Detail the initial configuration of an action-reaction human motion. The reacting person is located at <reaction_initial_xzr> with a pose of <reaction_initial_motion>, while the acting person is at <action_initial_xzr> and performing <ft_m2t_motion>",
+                "Explain an action-reaction human motion scenario. The reaction person's initial [x-position y-position orientation] is <reaction_initial_xzr>, and his pose is <reaction_initial_motion>. The action person's initial [x-position y-position orientation] is <action_initial_xzr>, and he is involved in <ft_m2t_motion>"
+            ],
+            "tgt": "<caption>",
+            "src_placeholders": [
+                "reaction_initial_xzr",
+                "reaction_initial_motion",
+                "action_initial_xzr",
+                "ft_m2t_motion"
+            ],
+            "tgt_placeholders": [
+                "caption"
+            ]
+        }
+    },
+    "eval_mg": {
+        "src": [
+            "Complete reaction motion whose initial [x-position y-position orientation] triplet is <reaction_initial_xzr> and initial pose is <reaction_initial_motion>, based on the action-reaction description and action motion. the description is '<caption>' , the initial [x-position y-position orientation] triplet of action is <action_initial_xzr> and action motion is: ",
+            "Based on the action-reaction description and action motion, generate the complete reaction motion starting from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion>. Description: '<caption>', action's initial [x-position y-position orientation] triplet: <action_initial_xzr>, action motion: ",
+            "Generate the full reaction motion from the initial [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> using the action-reaction description and action motion provided. Description: '<caption>', action's initial [x-position y-position orientation] triplet: <action_initial_xzr>, action motion: ",
+            "Starting from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion>, complete the reaction motion based on the description '<caption>' and action motion. The action has an initial [x-position y-position orientation] triplet <action_initial_xzr> and action motion: ",
+            "Using the description '<caption>' and action motion, complete the reaction motion from the initial [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion>. The action motion starts from [x-position y-position orientation] triplet <action_initial_xzr> and continues with: ",
+            "Create the complete reaction motion from <reaction_initial_xzr> and initial pose <reaction_initial_motion> by using the action-reaction description '<caption>' and action motion. The initial [x-position y-position orientation] triplet of action is <action_initial_xzr>, and the action motion is: ",
+            "Construct the reaction motion starting from the initial [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> based on the action-reaction description '<caption>' and action motion. Action's initial [x-position y-position orientation] triplet is <action_initial_xzr> and action motion is: ",
+            "Develop the reaction motion from the initial [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion>, guided by the description '<caption>' and action motion. Action's initial [x-position y-position orientation] triplet: <action_initial_xzr>, action motion: ",
+            "Finish the reaction motion beginning from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> using the provided description '<caption>' and action motion. Action starts from [x-position y-position orientation] triplet <action_initial_xzr> and moves as: ",
+            "Generate reaction motion from initial [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> using the action description '<caption>' and motion details. Action's starting [x-position y-position orientation] triplet: <action_initial_xzr>, action motion: ",
+            "Using the action motion and description '<caption>', develop the complete reaction motion starting from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion>. Initial [x-position y-position orientation] triplet for action is <action_initial_xzr> and action motion is: ",
+            "Construct a reaction motion sequence from the initial [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> based on action-reaction description '<caption>' and action motion. Action begins at [x-position y-position orientation] triplet <action_initial_xzr> and proceeds with: ",
+            "Create a complete reaction motion starting from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion>, guided by the action-reaction description '<caption>' and action motion. Action's initial [x-position y-position orientation] triplet is <action_initial_xzr> and action motion is: ",
+            "Develop a full reaction motion from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> using the action-reaction description '<caption>' and action motion. Action starts at [x-position y-position orientation] triplet <action_initial_xzr> and follows motion: ",
+            "Generate the reaction motion starting from initial [x-position y-position orientation] triplet <reaction_initial_xzr> and pose <reaction_initial_motion> based on the provided description '<caption>' and action motion. The action's initial [x-position y-position orientation] triplet is <action_initial_xzr>, and the action motion is: ",
+            "Create reaction motion beginning with [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> using the description '<caption>' and action motion. Action starts from [x-position y-position orientation] triplet <action_initial_xzr> and proceeds with motion: ",
+            "Complete the reaction motion from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> as per the description '<caption>' and action motion. Action starts at [x-position y-position orientation] triplet <action_initial_xzr> and continues with motion: ",
+            "Form the reaction motion starting from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion> using the description '<caption>' and action motion. Action has an initial [x-position y-position orientation] triplet of <action_initial_xzr> and motion: ",
+            "Initiate the reaction motion from [x-position y-position orientation] triplet <reaction_initial_xzr> and initial pose <reaction_initial_motion>, guided by the description '<caption>' and action motion. Action begins with [x-position y-position orientation] triplet <action_initial_xzr> and follows motion: "
+        ],
+        "tgt": "<reaction_motion>",
+        "src_placeholders": [
+            "action_initial_xzr",
+            "reaction_initial_xzr",
+            "reaction_initial_motion",
+            "caption"
+        ],
+        "tgt_placeholders": [
+            "reaction_motion"
+        ]
+    },
+    "eval_nlg": {
+        "src": [
+            "Infer the description of an action-reaction human motion. The reaction person's initial [x-position y-position orientation] is <reaction_initial_xzr>, and his initial pose is <reaction_initial_motion>. The action person's initial [x-position y-position orientation] is <action_initial_xzr>, and he is performing <action_motion>",
+            "Describe the sequence of an action-reaction human motion. The person reacting starts at <reaction_initial_xzr> with a pose of <reaction_initial_motion>, while the acting person starts at <action_initial_xzr> performing <action_motion>",
+            "Generate a description for a human motion scenario where the reaction person is initially at <reaction_initial_xzr> with a pose of <reaction_initial_motion>, and the action person is at <action_initial_xzr> performing <action_motion>",
+            "Explain the dynamics of an action-reaction human interaction. The reacting individual is at <reaction_initial_xzr> with <reaction_initial_motion>, while the acting individual begins at <action_initial_xzr> and is doing <action_motion>",
+            "Determine the description for an action-reaction human motion. The person reacting is initially positioned at <reaction_initial_xzr> with a pose of <reaction_initial_motion>. The person acting is initially at <action_initial_xzr> performing <action_motion>",
+            "Outline the action-reaction human movement. The reaction individual's starting point is <reaction_initial_xzr> with the pose <reaction_initial_motion>. The action individual's starting point is <action_initial_xzr> while performing <action_motion>",
+            "Formulate the description of an action-reaction human motion. The reaction person's initial state is [x-position y-position orientation] <reaction_initial_xzr> and pose <reaction_initial_motion>. The action person's initial state is [x-position y-position orientation] <action_initial_xzr> while doing <action_motion>",
+            "Craft a description for an action-reaction motion scenario. The person reacting starts at <reaction_initial_xzr> with the pose <reaction_initial_motion>, while the person acting starts at <action_initial_xzr> performing <action_motion>",
+            "Compose the description for a human motion interaction. The reaction individual's initial [x-position y-position orientation] is <reaction_initial_xzr>, and his pose is <reaction_initial_motion>. The action individual's initial [x-position y-position orientation] is <action_initial_xzr>, and he's doing <action_motion>",
+            "Detail the interaction in an action-reaction scenario. The person responding is initially at <reaction_initial_xzr> with <reaction_initial_motion>, while the person initiating action is at <action_initial_xzr> performing <action_motion>",
+            "Illustrate an action-reaction human motion. The reaction person's initial coordinates and orientation are <reaction_initial_xzr> and his initial pose is <reaction_initial_motion>. The action person's initial coordinates and orientation are <action_initial_xzr>, and he is engaged in <action_motion>",
+            "Depict the action-reaction motion. The reacting person is initially at <reaction_initial_xzr> with pose <reaction_initial_motion>, and the acting person is initially at <action_initial_xzr> engaged in <action_motion>",
+            "Describe the initial conditions of an action-reaction human motion. The reaction person starts at <reaction_initial_xzr> with the pose <reaction_initial_motion>. The action person begins at <action_initial_xzr> performing <action_motion>",
+            "Write a description for an action-reaction motion. The person reacting has initial [x-position y-position orientation] <reaction_initial_xzr> with pose <reaction_initial_motion>, while the person acting starts at <action_initial_xzr> doing <action_motion>",
+            "Generate a sequence description for an action-reaction motion. The person responding starts at <reaction_initial_xzr> with pose <reaction_initial_motion>, while the acting person begins at <action_initial_xzr> performing <action_motion>",
+            "Provide a narrative for an action-reaction human motion. The reacting individual has an initial [x-position y-position orientation] of <reaction_initial_xzr> and his pose is <reaction_initial_motion>. The acting individual's initial [x-position y-position orientation] is <action_initial_xzr>, engaged in <action_motion>",
+            "Create a description of an action-reaction human motion. The reaction person's initial [x-position y-position orientation] is <reaction_initial_xzr>, and his pose is <reaction_initial_motion>. The action person's initial [x-position y-position orientation] is <action_initial_xzr>, performing <action_motion>",
+            "Formulate a human motion description for an action-reaction scenario. The reacting individual starts from <reaction_initial_xzr> with a pose of <reaction_initial_motion>. The acting individual starts from <action_initial_xzr> and performs <action_motion>",
+            "Detail the initial configuration of an action-reaction human motion. The reacting person is located at <reaction_initial_xzr> with a pose of <reaction_initial_motion>, while the acting person is at <action_initial_xzr> and performing <action_motion>",
+            "Explain an action-reaction human motion scenario. The reaction person's initial [x-position y-position orientation] is <reaction_initial_xzr>, and his pose is <reaction_initial_motion>. The action person's initial [x-position y-position orientation] is <action_initial_xzr>, and he is involved in <action_motion>"
+        ],
+        "tgt": "<caption>",
+        "src_placeholders": [
+            "reaction_initial_xzr",
+            "reaction_initial_motion",
+            "action_initial_xzr",
+            "action_motion"
+        ],
+        "tgt_placeholders": [
+            "caption"
+        ]
+    }
+}

@@ -1,0 +1,45 @@
+seed: 42
+
+
+model:
+  target: src.models.motion_vqvae.MotionVQVAE
+  model_kwargs:
+    motion_representation: intergen_262
+    nb_code: 256
+    code_dim: 512
+    width: 512
+    output_emb_width: 512
+    v2: False
+    with_first_frame: True
+    mu: 0.99
+    down_t: 2
+    stride_t: 2
+    depth: 3
+    dilation_growth_rate: 3
+    vq_act: relu
+    vq_norm: ~
+    quantizer: ema_reset
+    beta: 1.0
+    evaluator_ckpt_path: /path/to/ckpt
+
+  training_kwargs:
+    loss_kwargs:
+      commit_weight: 0.02
+      vel_weight: 0.5
+    optimizer:
+      target: torch.optim.Adam
+      lr: 1e-4
+    scheduler: constant_schedule_with_warmup
+    warmup_steps: 1000
+
+
+trainer:
+  max_epochs: 1000
+
+
+dataloader:
+  batch_size: 512
+  val_batch_size: 32
+  num_workers: 32
+  pin_memory: True
+  persistent_workers: True
