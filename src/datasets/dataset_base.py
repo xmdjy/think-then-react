@@ -20,7 +20,7 @@ class DatasetBase(Dataset):
 
     @property
     def real_length(self):
-        raise NotImplementedError
+        raise NotImplementedError("Implement this in the child class")
 
     def __len__(self):
         if self.split == 'train':
@@ -33,4 +33,4 @@ class DatasetBase(Dataset):
         return self.getitem(index=index)
 
     def getitem(self, index):
-        raise NotImplementedError
+        raise NotImplementedError("Implement this in the child class")

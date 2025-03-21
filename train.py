@@ -124,7 +124,7 @@ def _preprocess_config(config, args, unknown_args):
         logger.warning(f'real batch size is {real_bs}')
     config.dataloader.batch_size = bs_per_device
 
-    # epoch scaling: scaling up the epoch length while reduce the number of epochs
+    # epoch scaling: scaling up the epoch length while reducing the number of epochs
     # this is useful when an epoch is too short and val is too frequent
     epoch_scaling = config.dataset.get('epoch_scaling')
     if epoch_scaling is not None and epoch_scaling != 1:
