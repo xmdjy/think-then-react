@@ -2,7 +2,7 @@ dataset:
   target: src.datasets.motion_vqvae_dataset.MotionVQVAEDataset
 
   # kwargs:
-  dataset_dir: ~/data/data/motion/interx
+  dataset_dir: ~/Think-Then-React/data/Inter-X_Dataset
   epoch_scaling: 10  # scaling up the length of dataset for each epoch, reduce val interval
   max_motion_length: 256
   min_motion_length: 64  # this is very important for VQVAE training (empirically)!

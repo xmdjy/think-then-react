@@ -38,7 +38,7 @@ args.add_argument(
 args = args.parse_args()
 
 #%%
-dataset = 'interx' if args is None else args.dataset
+dataset = 'Inter-X_Dataset' # if args is None else args.dataset
 devices = '1' if args is None else args.devices
 devices = [torch.device(f'cuda:{i}') for i in devices.split(',')]
 
@@ -116,7 +116,7 @@ def single_process_smpl_to_joint3d_22(smpl_paths: List[Path], pose_save_dir, bod
 
 
 if __name__ == '__main__':
-    data_root_dir = Path(f'~/data/data/motion/{dataset}').expanduser()
+    data_root_dir = Path(f'~/Think-Then-React/data/{dataset}').expanduser()
     smpl_dir = data_root_dir / 'motions'
     smpl_paths = [p for p in smpl_dir.glob('*') if p.is_dir()]
     if smpl_paths == []:

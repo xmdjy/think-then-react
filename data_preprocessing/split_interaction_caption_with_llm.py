@@ -108,7 +108,7 @@ Two people stand facing each other, one person bends over to massage the other p
 #%%  Prepare src data
 from pathlib import Path
 
-data_root_dir = Path('~/data/data/motion/interx').expanduser()
+data_root_dir = Path('~/Think-Then-React/data/Inter-X_Dataset').expanduser()
 src_txt_path_list = (data_root_dir / 'texts').glob('*.txt')
 tgt_dir = data_root_dir / 'texts_all'
 tgt_dir.mkdir(exist_ok=True)

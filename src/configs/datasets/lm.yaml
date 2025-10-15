@@ -2,7 +2,7 @@ dataset:
   target: src.datasets.lm_dataset.LMDataset
 
   # kwargs:
-  dataset_dir: ~/data/data/motion/interx
+  dataset_dir: ~/Think-Then-React/data/Inter-X_Dataset
   epoch_scaling: 1
   max_motion_length: 256
   min_motion_length: 32
